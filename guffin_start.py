@@ -21,7 +21,7 @@ class Settings(NamedTuple):
     # Use butter for major quests?
     butter: bool = True
     # Which augments to use, see classes.features.Augments.augments() for naming convention.
-    aug: List[str] = ["SS", "DS"]
+    aug: List[str] = ["EB", "CS"]
     # Assign resources to wishes?
     allocate_wishes: bool = False
     # Which wandoos version to use (0-2).

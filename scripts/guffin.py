@@ -116,21 +116,21 @@ class GuffinRun:
             Rebirth.do_rebirth()
             return
         FightBoss.nuke()
-        time.sleep(2)
-        Adventure.adventure(const.ZONE_MAP[GuffinRun.gold_zone])
+        time.sleep(20)
+        #Adventure.adventure(const.ZONE_MAP[GuffinRun.gold_zone])
         BloodMagic.toggle_auto_spells(number=False, drop=False)
-        GoldDiggers.gold_diggers(GuffinRun.diggers)
-        BloodMagic.blood_magic(8)
+        GoldDiggers.activate_all_diggers()
+        BloodMagic.blood_magic(5)
         NGU.cap_ngu()
         NGU.cap_ngu(magic=True)
-        Wandoos.set_wandoos(0)
-        Wandoos.wandoos(True, True)
-        Augmentation.augments(
-            {GuffinRun.aug[0]: 0.66, GuffinRun.aug[1]: 0.34}, Misc.get_idle_cap(1) * 0.5
-        )
+        #Wandoos.set_wandoos(0)
+        #Wandoos.wandoos(True, True)
+        #Augmentation.augments(
+        #    {GuffinRun.aug[0]: 0.66, GuffinRun.aug[1]: 0.34}, Misc.get_idle_cap(1) * 0.5
+        #)
         TimeMachine.time_machine(Misc.get_idle_cap(1) * 0.1, magic=True)
         GuffinRun.__update_gamestate()
-        BloodMagic.toggle_auto_spells(drop=False, gold=False)
+        #BloodMagic.toggle_auto_spells(drop=False, gold=False)
         if GuffinRun.wishes:
             GuffinRun.wishes.get_caps()
             GuffinRun.wishes.get_wish_status()
@@ -139,30 +139,30 @@ class GuffinRun:
         while GuffinRun.advanced_training_locked:
             GuffinRun.__do_quest()
             FightBoss.nuke()
-            GoldDiggers.gold_diggers(GuffinRun.diggers)
+            GoldDiggers.activate_all_diggers()
             NGU.cap_ngu()
             NGU.cap_ngu(magic=True)
-            Hacks.hacks(GuffinRun.hacks, coords.INPUT_MAX)
-            Augmentation.augments(
-                {GuffinRun.aug[0]: 0.66, GuffinRun.aug[1]: 0.34},
-                Misc.get_idle_cap(1) * 0.5,
-            )
+            #Hacks.hacks(GuffinRun.hacks, coords.INPUT_MAX)
+            #Augmentation.augments(
+            #    {GuffinRun.aug[0]: 0.66, GuffinRun.aug[1]: 0.34},
+            #    Misc.get_idle_cap(1) * 0.5,
+            #)
             TimeMachine.time_machine(coords.INPUT_MAX, magic=True)
             GuffinRun.__update_gamestate()
 
         Misc.reclaim_tm(energy=True, magic=True)
-        Misc.reclaim_aug()
-        AdvancedTraining.advanced_training(1e12)
-        Wandoos.set_wandoos(GuffinRun.wandoos_version)
-        Wandoos.wandoos(True, True)
-        Augmentation.augments(
-            {GuffinRun.aug[0]: 0.66, GuffinRun.aug[1]: 0.34}, Misc.get_idle_cap(1) * 0.5
-        )
+        #Misc.reclaim_aug()
+        AdvancedTraining.advanced_training(4e10)
+        #Wandoos.set_wandoos(GuffinRun.wandoos_version)
+        #Wandoos.wandoos(True, True)
+        #Augmentation.augments(
+        #    {GuffinRun.aug[0]: 0.66, GuffinRun.aug[1]: 0.34}, Misc.get_idle_cap(1) * 0.5
+        #)
         TimeMachine.time_machine(Misc.get_idle_cap(1) * 0.1, magic=True)
         while GuffinRun.rb_time < GuffinRun.max_rb_duration - 140:
-            GoldDiggers.gold_diggers(GuffinRun.diggers)
+            GoldDiggers.activate_all_diggers()
             FightBoss.nuke()
-            Hacks.hacks(GuffinRun.hacks, coords.INPUT_MAX)
+            #Hacks.hacks(GuffinRun.hacks, coords.INPUT_MAX)
             GuffinRun.__do_quest()
             GuffinRun.__update_gamestate()
 
