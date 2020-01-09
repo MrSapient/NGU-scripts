@@ -1549,7 +1549,7 @@ class Misc:
     def save_check() -> None:
         """Check if we can do the daily save for AP.
         Make sure no window in your browser pops up when you click the "Save"
-        button, otherwise sit will mess with the rest of the script.
+        button, otherwise it will mess with the rest of the script.
         """
         if Inputs.check_pixel_color(*coords.IS_SAVE_READY):
             Inputs.click(*coords.SAVE)

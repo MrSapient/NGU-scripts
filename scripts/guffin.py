@@ -158,7 +158,7 @@ class GuffinRun:
         #Augmentation.augments(
         #    {GuffinRun.aug[0]: 0.66, GuffinRun.aug[1]: 0.34}, Misc.get_idle_cap(1) * 0.5
         #)
-        TimeMachine.time_machine(Misc.get_idle_cap(1) * 0.1, magic=True)
+        TimeMachine.time_machine(coords.INPUT_MAX, magic=True)
         while GuffinRun.rb_time < GuffinRun.max_rb_duration - 140:
             GoldDiggers.activate_all_diggers()
             FightBoss.nuke()
